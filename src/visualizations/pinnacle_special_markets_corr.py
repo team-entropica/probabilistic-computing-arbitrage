@@ -74,6 +74,37 @@ def pairwise_nan_corr(data: np.ndarray) -> np.ndarray:
     return corr
 
 
+def select_changing_columns(
+    columns: List[str], data: np.ndarray, limit: int = 10
+) -> Tuple[List[str], np.ndarray]:
+    """
+    Keep columns that vary across the timeseries (exclude constant / all-NaN).
+    Return up to `limit` columns, prioritizing those with the largest std deviation.
+    """
+    keep: List[Tuple[float, int]] = []
+    for idx, col in enumerate(columns):
+        col_data = data[:, idx]
+        mask = ~np.isnan(col_data)
+        if mask.sum() < 2:
+            continue
+        vals = col_data[mask]
+        if np.allclose(vals, vals[0]):
+            continue
+        std = np.nanstd(col_data)
+        changes = np.count_nonzero(np.diff(vals))
+        keep.append((idx, changes, std))
+
+    # sort by changes then std, descending
+    keep_sorted = sorted(keep, key=lambda t: (t[1], t[2]), reverse=True)[:limit]
+    if not keep_sorted:
+        raise ValueError("No varying markets found to plot.")
+
+    selected_indices = [k[0] for k in keep_sorted]
+    sel_columns = [columns[i] for i in selected_indices]
+    sel_data = data[:, selected_indices]
+    return sel_columns, sel_data
+
+
 def plot_corr(columns: List[str], corr: np.ndarray, output: Path):
     fig = go.Figure(
         data=go.Heatmap(
@@ -117,8 +148,9 @@ def main():
     args = parser.parse_args()
 
     columns, data = load_wide_csv(args.input)
-    corr = pairwise_nan_corr(data)
-    plot_corr(columns, corr, args.output)
+    sel_cols, sel_data = select_changing_columns(columns, data, limit=10)
+    corr = pairwise_nan_corr(sel_data)
+    plot_corr(sel_cols, corr, args.output)
 
 
 if __name__ == "__main__":
