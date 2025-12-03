@@ -1,0 +1,11 @@
+# OS cruft
+.DS_Store
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Generated visualization outputs
+src/visualizations/plots/pinnacle_special_markets*.csv
+src/visualizations/plots/pinnacle_special_markets*.html
+src/visualizations/plots/pinnacle_special_markets_column_key.json
