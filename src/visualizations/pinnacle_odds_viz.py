@@ -3,7 +3,7 @@ from __future__ import annotations
 import importlib.util
 import sys
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, cast
 
 try:
     import plotly.graph_objects as go
@@ -29,9 +29,9 @@ def load_data_fetch_module():
     return module
 
 
-def events_to_records(events: Dict[str, Dict]) -> List[Dict[str, str]]:
+def events_to_records(events: Dict[str, Dict]) -> List[Dict[str, str | float]]:
     """Flatten the events dictionary into a list of rows for plotting."""
-    rows: List[Dict[str, str]] = []
+    rows: List[Dict[str, str | float]] = []
     for _, event in events.items():
         periods = event.get("periods", {}).get("num_0", {})
         money_line = periods.get("money_line")
@@ -52,20 +52,20 @@ def implied_prob(odds: float | None) -> float:
     return 0 if odds in (None, 0) else 1 / float(odds)
 
 
-def plot_records(rows: List[Dict[str, str]], limit: int = 100):
+def plot_records(rows: List[Dict[str, float | str]], limit: int = 100):
     """Plot the first N events as stacked bars of implied probabilities."""
     if not rows:
         raise ValueError("No odds to visualize.")
 
     # Sort descending by implied probability of home win.
-    rows = sorted(rows, key=lambda r: implied_prob(r.get("home")), reverse=True)[:limit]
+    rows = sorted(rows, key=lambda r: implied_prob(cast(float, r.get("home"))), reverse=True)[:limit]
     matches = [row["match"] for row in rows]
 
-    home_probs = [implied_prob(row["home"]) for row in rows]
-    draw_probs = [implied_prob(row["draw"]) for row in rows]
-    away_probs = [implied_prob(row["away"]) for row in rows]
+    home_probs = [implied_prob(cast(float, row["home"])) for row in rows]
+    draw_probs = [implied_prob(cast(float, row["draw"])) for row in rows]
+    away_probs = [implied_prob(cast(float, row["away"])) for row in rows]
 
-    labels = [m[:80] + ("..." if len(m) > 80 else "") for m in matches]
+    labels = [cast(str, m)[:80] + ("..." if len(cast(str, m)) > 80 else "") for m in matches]
 
     fig = go.Figure()
     fig.add_bar(name="Home", x=labels, y=home_probs, marker_color="#4C78A8")

@@ -4,7 +4,7 @@ import argparse
 import json
 import os
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Sequence
 from datetime import datetime, timezone
 import csv
 
@@ -212,7 +212,7 @@ def _append_long_csv(path: Path, rows: List[Dict[str, Any]], event_id: str):
         f"# Match: {rows[0]['home_team']} vs {rows[0]['away_team']} "
         f"(event {event_id})"
     )
-    existing_headers: List[str] = []
+    existing_headers: Sequence[str] = []
     existing_rows: List[Dict[str, Any]] = []
 
     if path.exists() and path.stat().st_size > 0:

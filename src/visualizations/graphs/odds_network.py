@@ -4,7 +4,7 @@ with edges weighted/signed by their correlations.
 """
 
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, cast
 import csv
 
 import networkx as nx
@@ -101,7 +101,7 @@ def build_graph(cols: List[str], corr: np.ndarray, threshold: float = 0.4) -> nx
 
 
 def layout_positions(g: nx.Graph) -> Dict[str, Tuple[float, float]]:
-    return nx.spring_layout(g, seed=11, k=1.0, iterations=200)
+    return cast(Dict[str, Tuple[float, float]], nx.spring_layout(g, seed=11, k=1.0, iterations=200))
 
 
 def build_traces(g: nx.Graph, pos: Dict[str, Tuple[float, float]]):
