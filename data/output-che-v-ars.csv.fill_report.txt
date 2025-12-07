@@ -1,0 +1,553 @@
+================================================================================
+DATA FILLING REPORT
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total values filled: 1143
+Rows removed (≤20 values): 72
+Rows with fills: 95
+
+REMOVED ROWS
+--------------------------------------------------------------------------------
+  Timestamp: 2025-11-10 08:46:25, Non-empty values: 7
+  Timestamp: 2025-11-23 15:08:14, Non-empty values: 7
+  Timestamp: 2025-11-24 11:33:04, Non-empty values: 7
+  Timestamp: 2025-11-25 06:11:29, Non-empty values: 18
+  Timestamp: 2025-11-25 06:11:34, Non-empty values: 20
+  Timestamp: 2025-11-26 18:19:15, Non-empty values: 3
+  Timestamp: 2025-11-27 10:53:15, Non-empty values: 19
+  Timestamp: 2025-11-28 09:23:42, Non-empty values: 15
+  Timestamp: 2025-11-28 18:22:47, Non-empty values: 10
+  Timestamp: 2025-11-29 08:10:52, Non-empty values: 14
+  ... and 62 more rows
+
+FILLING METHOD EXPLANATION
+--------------------------------------------------------------------------------
+Missing values are filled using the following strategy:
+  1. Forward Fill: For each column, missing values are filled with the
+     last known value from previous rows (carrying values forward in time).
+  2. Backward Fill: If values are missing at the beginning of a column,
+     they are filled with the first known value (carrying values backward).
+
+This ensures that each row maintains the most recent available odds value
+for each betting market, which is appropriate for time series data.
+
+FILLS BY COLUMN
+--------------------------------------------------------------------------------
+
+Column: money_line_away
+  Total fills: 30
+  Sample fills (first 5):
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 2.12 using forward_fill
+    Row 8 (timestamp: 2025-11-10 08:46:45): filled 2.28 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 2.17 using forward_fill
+    Row 18 (timestamp: 2025-11-25 07:02:14): filled 2.2 using forward_fill
+    Row 22 (timestamp: 2025-11-27 12:18:19): filled 2.23 using forward_fill
+  ... and 25 more fills
+
+Column: money_line_draw
+  Total fills: 13
+  Sample fills (first 5):
+    Row 8 (timestamp: 2025-11-10 08:46:45): filled 3.25 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 3.33 using forward_fill
+    Row 14 (timestamp: 2025-11-23 16:19:29): filled 3.33 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 3.43 using forward_fill
+    Row 27 (timestamp: 2025-11-29 03:08:34): filled 3.3 using forward_fill
+  ... and 8 more fills
+
+Column: money_line_home
+  Total fills: 29
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 3.28 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 3.28 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 3.44 using forward_fill
+    Row 15 (timestamp: 2025-11-23 17:12:19): filled 3.5 using forward_fill
+    Row 19 (timestamp: 2025-11-25 19:44:26): filled 3.45 using forward_fill
+  ... and 24 more fills
+
+Column: spread_-0.25_away
+  Total fills: 34
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 1.42 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 1.42 using forward_fill
+    Row 15 (timestamp: 2025-11-23 17:12:19): filled 1.421 using forward_fill
+    Row 19 (timestamp: 2025-11-25 19:44:26): filled 1.44 using forward_fill
+    Row 22 (timestamp: 2025-11-27 12:18:19): filled 1.442 using forward_fill
+  ... and 29 more fills
+
+Column: spread_-0.25_home
+  Total fills: 37
+  Sample fills (first 5):
+    Row 1 (timestamp: 2025-11-10 07:45:34): filled 2.66 using forward_fill
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 2.85 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 2.85 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 2.96 using forward_fill
+    Row 16 (timestamp: 2025-11-24 11:35:10): filled 3.01 using forward_fill
+  ... and 32 more fills
+
+Column: spread_-0.5_away
+  Total fills: 23
+  Sample fills (first 5):
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 1.331 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 1.321 using forward_fill
+    Row 18 (timestamp: 2025-11-25 07:02:14): filled 1.338 using forward_fill
+    Row 23 (timestamp: 2025-11-27 19:20:57): filled 1.343 using forward_fill
+    Row 28 (timestamp: 2025-11-29 13:07:16): filled 1.344 using forward_fill
+  ... and 18 more fills
+
+Column: spread_-0.5_home
+  Total fills: 30
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 3.25 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 3.25 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 3.41 using forward_fill
+    Row 16 (timestamp: 2025-11-24 11:35:10): filled 3.47 using forward_fill
+    Row 18 (timestamp: 2025-11-25 07:02:14): filled 3.46 using forward_fill
+  ... and 25 more fills
+
+Column: spread_-0.75_away
+  Total fills: 16
+  Sample fills (first 5):
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 1.228 using forward_fill
+    Row 19 (timestamp: 2025-11-25 19:44:26): filled 1.24 using forward_fill
+    Row 23 (timestamp: 2025-11-27 19:20:57): filled 1.239 using forward_fill
+    Row 28 (timestamp: 2025-11-29 13:07:16): filled 1.239 using forward_fill
+    Row 29 (timestamp: 2025-11-29 17:14:56): filled 1.239 using forward_fill
+  ... and 11 more fills
+
+Column: spread_-0.75_home
+  Total fills: 12
+  Sample fills (first 5):
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 4.11 using forward_fill
+    Row 16 (timestamp: 2025-11-24 11:35:10): filled 4.44 using forward_fill
+    Row 23 (timestamp: 2025-11-27 19:20:57): filled 4.38 using forward_fill
+    Row 39 (timestamp: 2025-11-30 03:08:46): filled 4.35 using forward_fill
+    Row 43 (timestamp: 2025-11-30 07:15:05): filled 4.42 using forward_fill
+  ... and 7 more fills
+
+Column: spread_0.0_away
+  Total fills: 47
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 1.558 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 1.558 using forward_fill
+    Row 6 (timestamp: 2025-11-10 07:47:59): filled 1.558 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 1.558 using forward_fill
+    Row 15 (timestamp: 2025-11-23 17:12:19): filled 1.568 using forward_fill
+  ... and 42 more fills
+
+Column: spread_0.0_home
+  Total fills: 45
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 2.43 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 2.43 using forward_fill
+    Row 6 (timestamp: 2025-11-10 07:47:59): filled 2.43 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 2.49 using forward_fill
+    Row 15 (timestamp: 2025-11-23 17:12:19): filled 2.52 using forward_fill
+  ... and 40 more fills
+
+Column: spread_0.25_away
+  Total fills: 34
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 1.847 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 1.847 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.97 using forward_fill
+    Row 18 (timestamp: 2025-11-25 07:02:14): filled 1.9 using forward_fill
+    Row 19 (timestamp: 2025-11-25 19:44:26): filled 1.9 using forward_fill
+  ... and 29 more fills
+
+Column: spread_0.25_home
+  Total fills: 40
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 1.98 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 1.98 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 1.98 using forward_fill
+    Row 15 (timestamp: 2025-11-23 17:12:19): filled 2 using forward_fill
+    Row 18 (timestamp: 2025-11-25 07:02:14): filled 2.01 using forward_fill
+  ... and 35 more fills
+
+Column: spread_0.5_away
+  Total fills: 25
+  Sample fills (first 5):
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 2.12 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 2.17 using forward_fill
+    Row 18 (timestamp: 2025-11-25 07:02:14): filled 2.2 using forward_fill
+    Row 22 (timestamp: 2025-11-27 12:18:19): filled 2.23 using forward_fill
+    Row 23 (timestamp: 2025-11-27 19:20:57): filled 2.23 using forward_fill
+  ... and 20 more fills
+
+Column: spread_0.5_home
+  Total fills: 23
+  Sample fills (first 5):
+    Row 1 (timestamp: 2025-11-10 07:45:34): filled 1.641 using forward_fill
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 1.724 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 1.724 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 1.714 using forward_fill
+    Row 19 (timestamp: 2025-11-25 19:44:26): filled 1.724 using forward_fill
+  ... and 18 more fills
+
+Column: spread_0.75_away
+  Total fills: 15
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 2.51 using forward_fill
+    Row 5 (timestamp: 2025-11-10 07:47:24): filled 2.51 using forward_fill
+    Row 18 (timestamp: 2025-11-25 07:02:14): filled 2.62 using forward_fill
+    Row 23 (timestamp: 2025-11-27 19:20:57): filled 2.67 using forward_fill
+    Row 38 (timestamp: 2025-11-30 02:26:29): filled 2.79 using forward_fill
+  ... and 10 more fills
+
+Column: spread_0.75_home
+  Total fills: 11
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 1.523 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 1.518 using forward_fill
+    Row 19 (timestamp: 2025-11-25 19:44:26): filled 1.526 using forward_fill
+    Row 28 (timestamp: 2025-11-29 13:07:16): filled 1.505 using forward_fill
+    Row 41 (timestamp: 2025-11-30 03:40:04): filled 1.492 using forward_fill
+  ... and 6 more fills
+
+Column: spread_1.0_away
+  Total fills: 6
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 3.29 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 3.41 using forward_fill
+    Row 38 (timestamp: 2025-11-30 02:26:29): filled 3.72 using forward_fill
+    Row 68 (timestamp: 2025-11-30 10:30:29): filled 4.22 using forward_fill
+    Row 69 (timestamp: 2025-11-30 10:42:28): filled 4.22 using forward_fill
+  ... and 1 more fills
+
+Column: spread_1.0_home
+  Total fills: 4
+  Sample fills (first 5):
+    Row 38 (timestamp: 2025-11-30 02:26:29): filled 1.303 using forward_fill
+    Row 43 (timestamp: 2025-11-30 07:15:05): filled 1.304 using forward_fill
+    Row 80 (timestamp: 2025-11-30 11:05:39): filled 1.264 using forward_fill
+    Row 82 (timestamp: 2025-11-30 11:09:09): filled 1.268 using forward_fill
+
+Column: spread_1.25_away
+  Total fills: 1
+  Sample fills (first 5):
+    Row 38 (timestamp: 2025-11-30 02:26:29): filled 4.21 using forward_fill
+
+Column: spread_1.25_home
+  Total fills: 12
+  Sample fills (first 5):
+    Row 4 (timestamp: 2025-11-10 07:47:19): filled 1.263 using forward_fill
+    Row 12 (timestamp: 2025-11-13 18:45:04): filled 1.263 using forward_fill
+    Row 28 (timestamp: 2025-11-29 13:07:16): filled 1.259 using forward_fill
+    Row 38 (timestamp: 2025-11-30 02:26:29): filled 1.253 using forward_fill
+    Row 43 (timestamp: 2025-11-30 07:15:05): filled 1.255 using forward_fill
+  ... and 7 more fills
+
+Column: totals_1.25_over
+  Total fills: 45
+  Sample fills (first 5):
+    Row 32 (timestamp: 2025-11-29 23:07:47): filled 1.209 using forward_fill
+    Row 33 (timestamp: 2025-11-29 23:40:39): filled 1.209 using forward_fill
+    Row 34 (timestamp: 2025-11-30 00:26:14): filled 1.209 using forward_fill
+    Row 35 (timestamp: 2025-11-30 00:26:19): filled 1.209 using forward_fill
+    Row 50 (timestamp: 2025-11-30 10:04:09): filled 1.253 using forward_fill
+  ... and 40 more fills
+
+Column: totals_1.25_under
+  Total fills: 41
+  Sample fills (first 5):
+    Row 32 (timestamp: 2025-11-29 23:07:47): filled 4.68 using forward_fill
+    Row 33 (timestamp: 2025-11-29 23:40:39): filled 4.68 using forward_fill
+    Row 34 (timestamp: 2025-11-30 00:26:14): filled 4.68 using forward_fill
+    Row 35 (timestamp: 2025-11-30 00:26:19): filled 4.68 using forward_fill
+    Row 46 (timestamp: 2025-11-30 07:24:49): filled 4.18 using forward_fill
+  ... and 36 more fills
+
+Column: totals_1.5_over
+  Total fills: 25
+  Sample fills (first 5):
+    Row 2 (timestamp: 2025-11-10 07:45:39): filled 1.261 using forward_fill
+    Row 7 (timestamp: 2025-11-10 07:52:59): filled 1.268 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.276 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.274 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 1.277 using forward_fill
+  ... and 20 more fills
+
+Column: totals_1.5_under
+  Total fills: 39
+  Sample fills (first 5):
+    Row 3 (timestamp: 2025-11-10 07:45:44): filled 3.69 using forward_fill
+    Row 7 (timestamp: 2025-11-10 07:52:59): filled 3.62 using forward_fill
+    Row 10 (timestamp: 2025-11-12 11:32:07): filled 3.69 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 3.69 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 3.67 using forward_fill
+  ... and 34 more fills
+
+Column: totals_1.75_over
+  Total fills: 30
+  Sample fills (first 5):
+    Row 7 (timestamp: 2025-11-10 07:52:59): filled 1.33 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.337 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.335 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 1.354 using forward_fill
+    Row 20 (timestamp: 2025-11-26 12:18:51): filled 1.366 using forward_fill
+  ... and 25 more fills
+
+Column: totals_1.75_under
+  Total fills: 31
+  Sample fills (first 5):
+    Row 3 (timestamp: 2025-11-10 07:45:44): filled 3.28 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 3.25 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 3.24 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 3.3 using forward_fill
+    Row 27 (timestamp: 2025-11-29 03:08:34): filled 3.07 using forward_fill
+  ... and 26 more fills
+
+Column: totals_2.0_over
+  Total fills: 24
+  Sample fills (first 5):
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.436 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.432 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 1.438 using forward_fill
+    Row 27 (timestamp: 2025-11-29 03:08:34): filled 1.523 using forward_fill
+    Row 29 (timestamp: 2025-11-29 17:14:56): filled 1.515 using forward_fill
+  ... and 19 more fills
+
+Column: totals_2.0_under
+  Total fills: 26
+  Sample fills (first 5):
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 2.83 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 2.84 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 2.82 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 2.88 using forward_fill
+    Row 20 (timestamp: 2025-11-26 12:18:51): filled 2.81 using forward_fill
+  ... and 21 more fills
+
+Column: totals_2.25_over
+  Total fills: 30
+  Sample fills (first 5):
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.68 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 1.68 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 1.689 using forward_fill
+    Row 27 (timestamp: 2025-11-29 03:08:34): filled 1.793 using forward_fill
+    Row 33 (timestamp: 2025-11-29 23:40:39): filled 1.787 using forward_fill
+  ... and 25 more fills
+
+Column: totals_2.25_under
+  Total fills: 31
+  Sample fills (first 5):
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 2.21 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 2.22 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 2.21 using forward_fill
+    Row 21 (timestamp: 2025-11-27 04:42:45): filled 2.21 using forward_fill
+    Row 27 (timestamp: 2025-11-29 03:08:34): filled 2.1 using forward_fill
+  ... and 26 more fills
+
+Column: totals_2.5_over
+  Total fills: 28
+  Sample fills (first 5):
+    Row 8 (timestamp: 2025-11-10 08:46:45): filled 1.909 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.909 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.917 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 1.925 using forward_fill
+    Row 14 (timestamp: 2025-11-23 16:19:29): filled 1.925 using forward_fill
+  ... and 23 more fills
+
+Column: totals_2.5_under
+  Total fills: 29
+  Sample fills (first 5):
+    Row 3 (timestamp: 2025-11-10 07:45:44): filled 1.943 using forward_fill
+    Row 8 (timestamp: 2025-11-10 08:46:45): filled 1.892 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.892 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.917 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 1.909 using forward_fill
+  ... and 24 more fills
+
+Column: totals_2.75_over
+  Total fills: 25
+  Sample fills (first 5):
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 2.16 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 2.15 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 2.17 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 2.17 using forward_fill
+    Row 20 (timestamp: 2025-11-26 12:18:51): filled 2.22 using forward_fill
+  ... and 20 more fills
+
+Column: totals_2.75_under
+  Total fills: 18
+  Sample fills (first 5):
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.709 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.714 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 1.746 using forward_fill
+    Row 27 (timestamp: 2025-11-29 03:08:34): filled 1.645 using forward_fill
+    Row 29 (timestamp: 2025-11-29 17:14:56): filled 1.653 using forward_fill
+  ... and 13 more fills
+
+Column: totals_3.0_over
+  Total fills: 25
+  Sample fills (first 5):
+    Row 3 (timestamp: 2025-11-10 07:45:44): filled 2.48 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 2.58 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 2.56 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 2.58 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 2.59 using forward_fill
+  ... and 20 more fills
+
+Column: totals_3.0_under
+  Total fills: 21
+  Sample fills (first 5):
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.515 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 1.51 using forward_fill
+    Row 20 (timestamp: 2025-11-26 12:18:51): filled 1.518 using forward_fill
+    Row 21 (timestamp: 2025-11-27 04:42:45): filled 1.518 using forward_fill
+    Row 27 (timestamp: 2025-11-29 03:08:34): filled 1.465 using forward_fill
+  ... and 16 more fills
+
+Column: totals_3.25_over
+  Total fills: 28
+  Sample fills (first 5):
+    Row 3 (timestamp: 2025-11-10 07:45:44): filled 2.78 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 2.88 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 2.88 using forward_fill
+    Row 17 (timestamp: 2025-11-25 05:26:54): filled 2.9 using forward_fill
+    Row 21 (timestamp: 2025-11-27 04:42:45): filled 2.97 using forward_fill
+  ... and 23 more fills
+
+Column: totals_3.25_under
+  Total fills: 19
+  Sample fills (first 5):
+    Row 3 (timestamp: 2025-11-10 07:45:44): filled 1.42 using forward_fill
+    Row 7 (timestamp: 2025-11-10 07:52:59): filled 1.404 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.414 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.416 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 1.413 using forward_fill
+  ... and 14 more fills
+
+Column: totals_3.5_over
+  Total fills: 71
+  Sample fills (first 5):
+    Row 3 (timestamp: 2025-11-10 07:45:44): filled 3.09 using forward_fill
+    Row 7 (timestamp: 2025-11-10 07:52:59): filled 3.14 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 3.19 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 3.18 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 3.19 using forward_fill
+  ... and 66 more fills
+
+Column: totals_3.5_under
+  Total fills: 70
+  Sample fills (first 5):
+    Row 3 (timestamp: 2025-11-10 07:45:44): filled 1.35 using forward_fill
+    Row 7 (timestamp: 2025-11-10 07:52:59): filled 1.341 using forward_fill
+    Row 9 (timestamp: 2025-11-10 08:47:30): filled 1.349 using forward_fill
+    Row 11 (timestamp: 2025-11-12 11:32:32): filled 1.35 using forward_fill
+    Row 13 (timestamp: 2025-11-15 06:44:20): filled 1.348 using forward_fill
+  ... and 65 more fills
+
+FILLS BY ROW (Sample - first 10 rows with fills)
+--------------------------------------------------------------------------------
+
+Row 0:
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+
+Row 1:
+  Column 'spread_-0.25_home': filled 2.66 using forward_fill
+  Column 'spread_0.5_home': filled 1.641 using forward_fill
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+
+Row 2:
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+  Column 'totals_1.5_over': filled 1.261 using forward_fill
+
+Row 3:
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+  Column 'totals_1.5_under': filled 3.69 using forward_fill
+  Column 'totals_1.75_under': filled 3.28 using forward_fill
+  Column 'totals_2.5_under': filled 1.943 using forward_fill
+  Column 'totals_3.0_over': filled 2.48 using forward_fill
+  Column 'totals_3.25_over': filled 2.78 using forward_fill
+  Column 'totals_3.25_under': filled 1.42 using forward_fill
+  Column 'totals_3.5_over': filled 3.09 using forward_fill
+  Column 'totals_3.5_under': filled 1.35 using forward_fill
+
+Row 4:
+  Column 'money_line_home': filled 3.28 using forward_fill
+  Column 'spread_-0.5_home': filled 3.25 using forward_fill
+  Column 'spread_-0.25_home': filled 2.85 using forward_fill
+  Column 'spread_-0.25_away': filled 1.42 using forward_fill
+  Column 'spread_0.0_home': filled 2.43 using forward_fill
+  Column 'spread_0.0_away': filled 1.558 using forward_fill
+  Column 'spread_0.25_home': filled 1.98 using forward_fill
+  Column 'spread_0.25_away': filled 1.847 using forward_fill
+  Column 'spread_0.5_home': filled 1.724 using forward_fill
+  Column 'spread_0.75_home': filled 1.523 using forward_fill
+  Column 'spread_0.75_away': filled 2.51 using forward_fill
+  Column 'spread_1.0_away': filled 3.29 using forward_fill
+  Column 'spread_1.25_home': filled 1.263 using forward_fill
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+
+Row 5:
+  Column 'money_line_home': filled 3.28 using forward_fill
+  Column 'money_line_away': filled 2.12 using forward_fill
+  Column 'spread_-0.75_home': filled 4.11 using forward_fill
+  Column 'spread_-0.75_away': filled 1.228 using forward_fill
+  Column 'spread_-0.5_home': filled 3.25 using forward_fill
+  Column 'spread_-0.5_away': filled 1.331 using forward_fill
+  Column 'spread_-0.25_home': filled 2.85 using forward_fill
+  Column 'spread_-0.25_away': filled 1.42 using forward_fill
+  Column 'spread_0.0_home': filled 2.43 using forward_fill
+  Column 'spread_0.0_away': filled 1.558 using forward_fill
+  Column 'spread_0.25_home': filled 1.98 using forward_fill
+  Column 'spread_0.25_away': filled 1.847 using forward_fill
+  Column 'spread_0.5_home': filled 1.724 using forward_fill
+  Column 'spread_0.5_away': filled 2.12 using forward_fill
+  Column 'spread_0.75_away': filled 2.51 using forward_fill
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+
+Row 6:
+  Column 'spread_0.0_home': filled 2.43 using forward_fill
+  Column 'spread_0.0_away': filled 1.558 using forward_fill
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+
+Row 7:
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+  Column 'totals_1.5_over': filled 1.268 using forward_fill
+  Column 'totals_1.5_under': filled 3.62 using forward_fill
+  Column 'totals_1.75_over': filled 1.33 using forward_fill
+  Column 'totals_3.25_under': filled 1.404 using forward_fill
+  Column 'totals_3.5_over': filled 3.14 using forward_fill
+  Column 'totals_3.5_under': filled 1.341 using forward_fill
+
+Row 8:
+  Column 'money_line_draw': filled 3.25 using forward_fill
+  Column 'money_line_away': filled 2.28 using forward_fill
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+  Column 'totals_2.5_over': filled 1.909 using forward_fill
+  Column 'totals_2.5_under': filled 1.892 using forward_fill
+
+Row 9:
+  Column 'spread_0.25_away': filled 1.97 using forward_fill
+  Column 'totals_1.25_over': filled 1.209 using backward_fill
+  Column 'totals_1.25_under': filled 4.68 using backward_fill
+  Column 'totals_1.5_over': filled 1.276 using forward_fill
+  Column 'totals_1.75_over': filled 1.337 using forward_fill
+  Column 'totals_1.75_under': filled 3.25 using forward_fill
+  Column 'totals_2.0_over': filled 1.436 using forward_fill
+  Column 'totals_2.0_under': filled 2.83 using forward_fill
+  Column 'totals_2.25_over': filled 1.68 using forward_fill
+  Column 'totals_2.25_under': filled 2.21 using forward_fill
+  Column 'totals_2.5_over': filled 1.909 using forward_fill
+  Column 'totals_2.5_under': filled 1.892 using forward_fill
+  Column 'totals_2.75_over': filled 2.16 using forward_fill
+  Column 'totals_2.75_under': filled 1.709 using forward_fill
+  Column 'totals_3.0_over': filled 2.58 using forward_fill
+  Column 'totals_3.25_over': filled 2.88 using forward_fill
+  Column 'totals_3.25_under': filled 1.414 using forward_fill
+  Column 'totals_3.5_over': filled 3.19 using forward_fill
+  Column 'totals_3.5_under': filled 1.349 using forward_fill
+
+================================================================================
